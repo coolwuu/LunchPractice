@@ -1,0 +1,114 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    @*@Scripts.Render("~/Content/Scripts/js")
+        @Styles.Render("~/Content/CSS/css")*@
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand mb-0 h1" href="#">Lunch System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h4>Order Page</h4>
+        <div class="row">
+            <div class="col-6">
+                <img src="~/Content/Image/menu_HuXuZhang.jpg" alt="HuXuZhang" width="90%" height="90%"> <br />
+            </div>
+            <div class="col-6">
+                <div class="input-group">
+                    <span class="input-group-addon"> Name</span>
+                    <input class="form-control" type="text" id="User" /><br />
+                </div>
+                <br />
+                <div class="row">
+                    <div class="input-group col-sm-8">
+                        <span class="input-group-addon"> Order</span>
+                        <input class="form-control" type="text" id="Meal" />
+                    </div>
+                    <div class="input-group col-sm-4">
+                        <span class="input-group-addon"> Cost</span>
+                        <input type="text" class="form-control" id="Cost">
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-outline-success btn-block" type="button" id="submit" onclick="Order()">Submit</button>
+                <table style="width:100%" id="OrderTable">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Order</th>
+                        <th>Cost</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Kiki,Eason and their friend</p>
+        </footer>
+    </div>
+    <script>
+        function Clear() {
+            document.getElementById("Meal").value = "";
+            document.getElementById("Cost").value = "";
+        }
+
+        function Order() {
+            var meal = document.getElementById("Meal").value;
+            var user = document.getElementById("User").value;
+            var cost = document.getElementById("Cost").value;
+            if (meal === "" || user === "")
+                return;
+
+            var tableRef = document.getElementById('OrderTable').getElementsByTagName('tbody')[0];
+
+            // Insert a row in the table at the last row
+            var newRow = tableRef.insertRow(tableRef.rows.length);
+
+            // Insert a cell in the row at index 0
+            var columnUser = newRow.insertCell(0);
+            var columnMeal = newRow.insertCell(1);
+            var columnCost = newRow.insertCell(2);
+
+            // Append a text node to the cell
+            var textUser = document.createTextNode(user);
+            var textMeal = document.createTextNode(meal);
+            var textCost = document.createTextNode(cost);
+            columnUser.appendChild(textUser);
+            columnMeal.appendChild(textMeal);
+            columnCost.appendChild(textCost);
+            Clear();
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+</html>
