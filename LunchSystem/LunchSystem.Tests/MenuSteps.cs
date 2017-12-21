@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.UI.HtmlControls;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NSubstitute;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
@@ -20,13 +24,13 @@ namespace LunchSystem.Tests
         [Given(@"I see the menu")]
         public void GivenISeeTheMenu()
         {
-            //ScenarioContext.Current.Pending();
+            //
         }
 
         [Given(@"I Key in my name '(.*)'")]
         public void GivenIKeyInMyName(string userName)
         {
-            _driver.FindElement(By.Id("User")).SendKeys(userName);
+            _driver.FindElement(By.Id("MemberName")).SendKeys(userName);
         }
 
         [Given(@"I Key in '(.*)'")]
@@ -50,7 +54,8 @@ namespace LunchSystem.Tests
         [Then(@"I should able to see my order list")]
         public void ThenIShouldAbleToSeeMyOrderList()
         {
-            Assert.AreEqual("Wuu 滷肉飯 60<br>", _driver.FindElementById("OrderList").GetAttribute("innerHTML"));
+            IList<IWebElement> rows = _driver.FindElementById("OrderTable").FindElements(By.TagName("tr"));
+            Assert.AreEqual("Wuu Big Mac 90", rows[rows.Count-1].Text);
         }
 
         [After("Order")]

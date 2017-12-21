@@ -8,7 +8,7 @@ Scenario: Order
 	Given I have entered Website
 	And I see the menu
 	And I Key in my name 'Wuu'
-	And I Key in '滷肉飯'
-	And I Key the money '60'
+	And I Key in 'Big Mac'
+	And I Key the money '90'
 	When I press Ok
 	Then I should able to see my order list

@@ -1,0 +1,32 @@
+﻿@using System.Data
+@model IEnumerable<OrdersSummary>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Orders Summary</h2>
+<table style="width:100%" id="OrderTable">
+    <thead>
+        <tr>
+            <th>Meal</th>
+            <th>Count</th>
+            <th>Total</th>
+        </tr>
+        @foreach (var summary in Model)
+        {
+            <tr>
+                <td>
+                    @summary.Meal
+                </td>
+                <td>
+                    @summary.Count
+                </td>
+                <td>
+                    @summary.Total
+                </td>
+            </tr>
+                        }
+    </thead>
+    <tbody></tbody>
+</table>

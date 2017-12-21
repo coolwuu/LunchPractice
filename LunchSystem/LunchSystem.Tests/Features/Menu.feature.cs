@@ -80,9 +80,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.And("I Key in my name \'Wuu\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("I Key in \'滷肉飯\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Key in \'Big Mac\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("I Key the money \'60\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I Key the money \'90\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
  testRunner.When("I press Ok", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
