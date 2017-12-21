@@ -60,4 +60,7 @@
     <Folder Include="Data" />
     <Folder Include="dbo" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Orders.sql" />
+  </ItemGroup>
 </Project>
