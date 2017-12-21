@@ -17,6 +17,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# dbmdl files
+*.dbmdl
+
 # =========================
 # Operating System Files
 # =========================
