@@ -2,10 +2,10 @@
 		Login and Register
 @Login
 Scenario: Login
-	Given I have entered Website
-	And I see the login form
-	And I key in my login id 'Wuu'
-	And I key in my Password '1234'
-	When I press login
+	Given Entered to Login Page
+	And see the login form
+	And key in login id 'Wuu'
+	And key in Password '1234'
+	When press login
 	Then Should Popout HaventRegister error.
 

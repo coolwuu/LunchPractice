@@ -1,29 +1,38 @@
-﻿using TechTalk.SpecFlow;
+﻿using OpenQA.Selenium.Chrome;
+using TechTalk.SpecFlow;
 
 namespace LunchSystem.Tests.Steps
 {
     [Binding]
     public class LoginSteps
     {
-        [Given(@"I see the login form")]
+        private ChromeDriver _driver = new ChromeDriver();
+
+        [Given(@"Entered to Login Page")]
+        public void GivenEnteredToLoginPage()
+        {
+            _driver.Navigate().GoToUrl("http://localhost:50621/Login/Index");
+        }
+
+        [Given(@"see the login form")]
         public void GivenISeeTheLoginForm()
         {
             //
         }
 
-        [Given(@"I key in my login id '(.*)'")]
+        [Given(@"key in login id '(.*)'")]
         public void GivenIKeyInMyLoginId(string p0)
         {
             ScenarioContext.Current.Pending();
         }
 
-        [Given(@"I key in my Password '(.*)'")]
+        [Given(@"key in Password '(.*)'")]
         public void GivenIKeyInMyPassword(int p0)
         {
             ScenarioContext.Current.Pending();
         }
 
-        [When(@"I press login")]
+        [When(@"press login")]
         public void WhenIPressLogin()
         {
             ScenarioContext.Current.Pending();
@@ -33,6 +42,12 @@ namespace LunchSystem.Tests.Steps
         public void ThenShouldPopoutHaventRegisterError_()
         {
             ScenarioContext.Current.Pending();
+        }
+
+        [After("Login")]
+        public void Close()
+        {
+            _driver.Quit();
         }
     }
 }
