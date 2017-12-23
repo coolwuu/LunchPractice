@@ -5,10 +5,10 @@
 
 @Order
 Scenario: Order
-	Given I have entered Website
-	And I see the menu
-	And I Key in my name 'Wuu'
-	And I Key in 'Big Mac'
-	And I Key the money '90'
-	When I press Ok
-	Then I should able to see my order list
+	Given enter Lunch Website
+	And can see the menu
+	And Key in 'Wuu' in Name
+	And Key in 'Big Mac' in Meal
+	And Key the money '90' in Cost
+	When press Ok
+	Then able to see order list

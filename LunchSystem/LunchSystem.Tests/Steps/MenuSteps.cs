@@ -11,43 +11,44 @@ namespace LunchSystem.Tests.Steps
     {
         private ChromeDriver _driver = new ChromeDriver();
 
-        [Given(@"I have entered Website")]
+        [Given(@"enter Lunch Website")]
         public void GivenIHaveEnteredWebsite()
         {
             _driver.Navigate().GoToUrl("http://localhost:50621/Home/Index");
         }
 
-        [Given(@"I see the menu")]
+        [Given(@"can see the menu")]
         public void GivenISeeTheMenu()
         {
             //
         }
 
-        [Given(@"I Key in my name '(.*)'")]
+
+        [Given(@"Key in '(.*)' in Name")]
         public void GivenIKeyInMyName(string userName)
         {
             _driver.FindElement(By.Id("MemberName")).SendKeys(userName);
         }
 
-        [Given(@"I Key in '(.*)'")]
+        [Given(@"Key in '(.*)' in Meal")]
         public void GivenIKeyIn(string meal)
         {
             _driver.FindElement(By.Id("Meal")).SendKeys(meal);
         }
 
-        [Given(@"I Key the money '(.*)'")]
+        [Given(@"Key the money '(.*)' in Cost")]
         public void GivenIKeyTheMoney(int money)
         {
             _driver.FindElement(By.Id("Cost")).SendKeys(money.ToString());
         }
-
-        [When(@"I press Ok")]
+        
+        [When(@"press Ok")]
         public void WhenIPressOk()
         {
             _driver.FindElementById("submit").Click();
         }
 
-        [Then(@"I should able to see my order list")]
+        [Then(@"able to see order list")]
         public void ThenIShouldAbleToSeeMyOrderList()
         {
             IList<IWebElement> rows = _driver.FindElementById("OrderTable").FindElements(By.TagName("tr"));
