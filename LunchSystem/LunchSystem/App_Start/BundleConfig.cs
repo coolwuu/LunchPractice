@@ -17,14 +17,15 @@ namespace LunchSystem.App_Start
                 "~/Content/Scripts/bootstrap.js",
                 "~/Content/Scripts/popper.js"
                 ));
-            
+
 
 
             bundles.Add(new StyleBundle("~/Content/CSS/css").Include(
                 "~/Content/CSS/bootstrap.css",
-                "~/Content/CSS/bootstrap.min.css"));
+                "~/Content/CSS/bootstrap.min.css",
+                "~/Content/CSS/animate.css"));
 
-            
+
         }
     }
 }

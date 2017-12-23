@@ -25,13 +25,13 @@ namespace LunchSystem.Tests.Steps
         [Given(@"key in login id '(.*)'")]
         public void GivenKeyInLoginId(string loginId)
         {
-            _driver.FindElementById("UserName").SendKeys(loginId);
+            _driver.FindElementById("LoginUserName").SendKeys(loginId);
         }
 
         [Given(@"key in Password '(.*)'")]
         public void GivenKeyInPassword(string password)
         {
-            _driver.FindElementById("Password").SendKeys(password);
+            _driver.FindElementById("LoginPassword").SendKeys(password);
         }
 
         [When(@"press login")]

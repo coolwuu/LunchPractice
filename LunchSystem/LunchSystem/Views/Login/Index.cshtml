@@ -4,19 +4,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunch System</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
+    <title>Lunch System Login Page</title>
 </head>
 <body>
-    <div class="container border border-primary">
+    <div class="container animated rubberBand" style="margin: 150px auto; max-width: 400px; border: 1px solid #ccc; box-shadow: 0px 2px 3px 0px #ddd;">
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" href="#Login" role="tab" data-toggle="tab">Login</a>
+                <a class="nav-link active" href="#LoginPanel" role="tab" data-toggle="tab">Login</a>
             </li>
             @*<li class="nav-item">
-                <a class="nav-link" href="#Register" role="tab" data-toggle="tab">Register</a>
-            </li>*@
+                    <a class="nav-link" href="#Register" role="tab" data-toggle="tab">Register</a>
+                </li>*@
         </ul>
 
         <!-- Tab panes -->
@@ -24,22 +22,18 @@
             <div role="tabpanel" class="tab-pane fade show active" id="LoginPanel">
                 <form id="LoginForm">
                     <div class="form-group">
-                        @Html.TextBox("UserName", null, new { @class = "form-control", autofocus = "autofocus", placeholder = "UserName" })
+                        @Html.TextBox("LoginUserName", null, new { @class = "form-control", autofocus = "autofocus", placeholder = "UserName" })
                     </div>
                     <div class="form-group">
-                        @Html.TextBox("Password", null, new { @class = "form-control", placeholder = "Password", type = "Password"})
+                        @Html.TextBox("LoginPassword", null, new { @class = "form-control", placeholder = "Password", type = "Password" })
                     </div>
-                    <button type="submit" class="btn btn-primary" id="LoginButton">Submit</button>
+                    <button type="submit" class="btn btn-success btn-block" id="LoginButton" style="margin-bottom: 10px;">Login</button>
                 </form>
             </div>
             @*<div role="tabpanel" class="tab-pane fade" id="Register">Register</div>*@
         </div>
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Kiki,Eason and their friend</p>
-        </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    @Scripts.Render("~/Content/Scripts/js")
+    @Styles.Render("~/Content/CSS/css")
 </body>
 </html>
