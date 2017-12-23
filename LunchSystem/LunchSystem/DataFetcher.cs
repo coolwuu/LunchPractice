@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,7 +11,9 @@ namespace LunchSystem
 {
     public static class DataFetcher
     {
-        private const string ConnStr = "Data Source=TI03BY20\\SQL2014;Initial Catalog=LunchDB;Persist Security Info=True;User ID=kiki;Password=kiki;Pooling=true;min pool size=4;max pool size=100;";
+        private static string ConnStr = ConfigurationManager.AppSettings["LunchDB"];
+
+
         public static IEnumerable<T> Query<T>(string sql)
         {
             SqlConnection conn = new SqlConnection(ConnStr);
