@@ -5,7 +5,7 @@ Scenario: Login Failed With Need Register Message
 	Given Entered to Login Page
 	And see the login form
 	And key in login id 'Wuu'
-	And key in Password '1234'
+	And key in Password 'Wuu1234'
 	When press login
-	Then Should Popout HaventRegister error.
+	Then Should show need Register message
 

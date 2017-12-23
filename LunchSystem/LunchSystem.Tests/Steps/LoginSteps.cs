@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium.Chrome;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
 
 namespace LunchSystem.Tests.Steps
@@ -15,39 +17,39 @@ namespace LunchSystem.Tests.Steps
         }
 
         [Given(@"see the login form")]
-        public void GivenISeeTheLoginForm()
+        public void GivenSeeTheLoginForm()
         {
-            //
+            Assert.IsTrue(_driver.FindElement(By.Id("LoginForm")).Displayed);
         }
 
         [Given(@"key in login id '(.*)'")]
-        public void GivenIKeyInMyLoginId(string p0)
+        public void GivenKeyInLoginId(string loginId)
         {
-            ScenarioContext.Current.Pending();
+            _driver.FindElementById("UserName").SendKeys(loginId);
         }
 
         [Given(@"key in Password '(.*)'")]
-        public void GivenIKeyInMyPassword(int p0)
+        public void GivenKeyInPassword(string password)
         {
-            ScenarioContext.Current.Pending();
+            _driver.FindElementById("Password").SendKeys(password);
         }
 
         [When(@"press login")]
-        public void WhenIPressLogin()
+        public void WhenPressLogin()
+        {
+            _driver.FindElementById("LoginButton").Submit();
+        }
+
+        [Then(@"Should show need Register message")]
+        public void ThenShouldShowNeedRegisterMessage()
         {
             ScenarioContext.Current.Pending();
         }
 
-        [Then(@"Should Popout HaventRegister error\.")]
-        public void ThenShouldPopoutHaventRegisterError_()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [After("Login")]
-        public void Close()
-        {
-            _driver.Quit();
-        }
+        //[After("Login")]
+        //public void Close()
+        //{
+        //    _driver.Quit();
+        //}
     }
 }
