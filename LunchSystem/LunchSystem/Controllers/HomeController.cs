@@ -24,7 +24,7 @@ namespace LunchSystem.Controllers
         public ActionResult Order(string memberName, string meal, string cost)
         {
 
-            LunchRepository.Order(memberName,meal,cost);
+            LunchRepository.Order(memberName, meal, cost);
             return RedirectToAction("Index");
         }
     }

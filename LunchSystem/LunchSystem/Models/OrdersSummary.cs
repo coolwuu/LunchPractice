@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LunchSystem
+namespace LunchSystem.Models
 {
     public class OrdersSummary
     {

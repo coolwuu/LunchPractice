@@ -1,15 +1,13 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using LunchSystem.Controllers;
 using LunchSystem.Interface;
 using LunchSystem.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
 
-namespace LunchSystem.Tests
+namespace LunchSystem.Tests.UnitTest
 {
     [TestFixture]
     public class HomeControllerTests

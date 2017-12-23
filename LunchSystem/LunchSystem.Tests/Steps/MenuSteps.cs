@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.UI.HtmlControls;
+﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NSubstitute;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
 
-namespace LunchSystem.Tests
+namespace LunchSystem.Tests.Steps
 {
     [Binding]
     public class MenuSteps
@@ -18,7 +14,7 @@ namespace LunchSystem.Tests
         [Given(@"I have entered Website")]
         public void GivenIHaveEnteredWebsite()
         {
-            _driver.Navigate().GoToUrl("http://localhost:50621/");
+            _driver.Navigate().GoToUrl("http://localhost:50621/Home/Index");
         }
 
         [Given(@"I see the menu")]
@@ -55,7 +51,8 @@ namespace LunchSystem.Tests
         public void ThenIShouldAbleToSeeMyOrderList()
         {
             IList<IWebElement> rows = _driver.FindElementById("OrderTable").FindElements(By.TagName("tr"));
-            Assert.AreEqual("Wuu Big Mac 90", rows[rows.Count-1].Text);
+            var lastRow = rows[rows.Count - 1];
+            Assert.AreEqual("Wuu Big Mac 90", lastRow.Text);
         }
 
         [After("Order")]

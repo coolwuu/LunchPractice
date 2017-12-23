@@ -9,7 +9,10 @@ namespace LunchSystem.Repo
     {
         public IEnumerable<Order> GetOrderedMeals()
         {
-            return DataFetcher.Query<Order>("SELECT OrderId,MemberName,Meal,Cost,CreatedOn,LastModifiedOn \r\nFROM Orders WITH(NOLOCK)\r\nWHERE DAY(createdon) = Day(getdate())");
+            var sql = @"SELECT OrderId,MemberName,Meal,Cost,CreatedOn,LastModifiedOn
+                        FROM Orders WITH(NOLOCK)
+                        WHERE DAY(createdon) = Day(GETDATE())";
+            return DataFetcher.Query<Order>(sql);
         }
 
         public void Order(string memberName, string meal, string cost)
@@ -19,12 +22,12 @@ namespace LunchSystem.Repo
 
         public IEnumerable<OrdersSummary> GetOrdersSummary()
         {
-            return DataFetcher.Query<OrdersSummary>(
-                "SELECT Meal, COUNT(1) as [count], SUM(Cost) as Total\r\n" +
-                "FROM orders WITH(NOLOCK)\r\n" +
-                "WHERE DAY(createdon) = Day(getdate())\r\n" +
-                "GROUP BY Meal\r\n" +
-                "ORDER BY Meal");
+            var sql = @"SELECT Meal, COUNT(1) as [count], SUM(Cost) as Total
+                        FROM orders WITH(NOLOCK)
+                        WHERE DAY(createdon) = Day(getdate())
+                        GROUP BY Meal
+                        ORDER BY Meal";
+            return DataFetcher.Query<OrdersSummary>(sql);
         }
     }
 }
