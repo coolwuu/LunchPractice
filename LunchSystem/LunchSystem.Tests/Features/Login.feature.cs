@@ -64,11 +64,11 @@ namespace LunchSystem.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Login")]
+        [NUnit.Framework.DescriptionAttribute("Login Failed With Need Register Message")]
         [NUnit.Framework.CategoryAttribute("Login")]
-        public virtual void Login()
+        public virtual void LoginFailedWithNeedRegisterMessage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login Failed With Need Register Message", new string[] {
                         "Login"});
 #line 4
 this.ScenarioSetup(scenarioInfo);
