@@ -13,8 +13,8 @@ namespace LunchSystem.Controllers
         public ILunchRepository LunchRepository { get; set; }
         public ActionResult Index()
         {
-            var ds = LunchRepository.GetOrdersSummary();
-            return View(ds);
+            var ordersSummaries = LunchRepository.GetOrdersSummary();
+            return View(ordersSummaries);
         }
     }
 }
