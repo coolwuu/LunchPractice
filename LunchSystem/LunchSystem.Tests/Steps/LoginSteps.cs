@@ -25,31 +25,32 @@ namespace LunchSystem.Tests.Steps
         [Given(@"key in login id '(.*)'")]
         public void GivenKeyInLoginId(string loginId)
         {
-            _driver.FindElementById("LoginUserName").SendKeys(loginId);
+            _driver.FindElementById("loginUserName").SendKeys(loginId);
         }
 
         [Given(@"key in Password '(.*)'")]
         public void GivenKeyInPassword(string password)
         {
-            _driver.FindElementById("LoginPassword").SendKeys(password);
+            _driver.FindElementById("loginPassword").SendKeys(password);
         }
 
         [When(@"press login")]
         public void WhenPressLogin()
         {
-            _driver.FindElementById("LoginButton").Submit();
+            _driver.FindElementById("loginButton").Submit();
         }
 
         [Then(@"Should show need Register message")]
         public void ThenShouldShowNeedRegisterMessage()
         {
-            ScenarioContext.Current.Pending();
+            var errorMessage = "You need to register an account.";
+            Assert.AreEqual(errorMessage,_driver.FindElementById("errorMessage").Text);
         }
 
-        //[After("Login")]
-        //public void Close()
-        //{
-        //    _driver.Quit();
-        //}
+        [After("Login")]
+        public void Close()
+        {
+            _driver.Quit();
+        }
     }
 }

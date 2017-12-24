@@ -8,19 +8,20 @@ namespace LunchSystem.Models
 {
     public class Order
     {
-        public int OrderId;
+        public int OrderId { get; set; }
 
         [Required]
-        public string MemberName;
+        public string MemberName { get; set; }
 
         [Required]
-        public string Meal;
+        public string Meal { get; set; }
 
         [Required]
-        public int Cost;
+        public int Cost { get; set; }
 
-        public DateTime CreatedOn;
-        public DateTime LastModifiedOn;
+        public DateTime CreatedOn { get; set; }
+
+        public DateTime LastModifiedOn { get; set; }
 
     }
 }

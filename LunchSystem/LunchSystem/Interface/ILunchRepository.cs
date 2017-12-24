@@ -8,6 +8,7 @@ namespace LunchSystem.Interface
         IEnumerable<Order> GetOrderedMeals();
 
         void Order(string memberName, string meal, string cost);
-        IEnumerable<OrdersSummary> GetOrdersSummary();
+        IEnumerable<OrdersSummaryViewModel> GetOrdersSummary();
+        bool AccountIsValid(string loginUserName, string loginPassword);
     }
 }
