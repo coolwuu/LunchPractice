@@ -24,11 +24,14 @@
             <div role="tabpanel" class="tab-pane fade show active" id="loginPanel">
                 @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { id = "LoginForm" }))
                 {
+                    @Html.AntiForgeryToken()
                     <div class="form-group">
-                        @Html.TextBox("LoginUsername", null, new { @class = "form-control", autofocus = "autofocus", placeholder = "UserName" })
+                        @Html.TextBoxFor(model => model.LoginUsername, null, new { @class = "form-control", autofocus = "autofocus", placeholder = "UserName" })
+                        @Html.ValidationMessageFor(model => model.LoginUsername, "", new { @class = "text-danger" })
                     </div>
                         <div class="form-group">
-                            @Html.TextBox("LoginPassword", null, new { @class = "form-control", placeholder = "Password", type = "Password" })
+                            @Html.TextBoxFor(model => model.LoginPassword, null, new { @class = "form-control", placeholder = "Password", type = "Password" })
+                            @Html.ValidationMessageFor(model => model.LoginPassword, "", new { @class = "text-danger" })
                         </div>
                         <button type="submit" class="btn btn-success btn-block" id="loginButton" style="margin-bottom: 10px;">Login</button>
                 }

@@ -24,13 +24,24 @@ namespace LunchSystem.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel model)
         {
-            if (!_lunchRepository.AccountIsValid(model.LoginUsername))
+            try
             {
-                model.Message = "You need to register an account.";
+                model.Valid();
+                if (!_lunchRepository.AccountIsValid(model.LoginUsername))
+                {
+                    model.Message = "You need to register an account.";
+                }
+                
             }
-            return View("Index",model);
+            catch (Exception ex)
+            {
+                model.Message = ex.Message;
+            }
+            return View("Index", model);
         }
     }
 }

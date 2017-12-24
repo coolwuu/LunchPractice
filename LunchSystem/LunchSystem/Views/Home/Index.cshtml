@@ -11,6 +11,7 @@
     <div class="col-6">
         @using (Html.BeginForm("Order", "Home", FormMethod.Post))
         {
+            @Html.AntiForgeryToken()
             <p class="alert alert-info">All fields are <strong>required</strong>.</p>
             <div class="form-row">
                 <div class="form-group col-sm-12">
@@ -36,23 +37,23 @@
             </div>
             <button type="submit" class="btn btn-outline-success btn-block" id="submit">Submit</button>
         }
-        
-        <br/>
+
+        <br />
         <table style="width:100%" id="OrderTable">
             <thead>
-            <tr>
-                <th>Name</th>
-                <th>Order</th>
-                <th>Cost</th>
-            </tr>
-            @foreach (var order in Model)
-            {
                 <tr>
-                    <td>@order.MemberName</td>
-                    <td>@order.Meal</td>
-                    <td>@order.Cost</td>
+                    <th>Name</th>
+                    <th>Order</th>
+                    <th>Cost</th>
                 </tr>
-            }
+                @foreach (var order in Model)
+            {
+                    <tr>
+                        <td>@order.MemberName</td>
+                        <td>@order.Meal</td>
+                        <td>@order.Cost</td>
+                    </tr>
+                }
             </thead>
             <tbody></tbody>
         </table>

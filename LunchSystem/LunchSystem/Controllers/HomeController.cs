@@ -4,6 +4,7 @@ using LunchSystem.Repo;
 
 namespace LunchSystem.Controllers
 {
+    //[Authorize]
     public class HomeController : Controller
     {
         public HomeController()
@@ -21,6 +22,7 @@ namespace LunchSystem.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Order(string memberName, string meal, string cost)
         {
 
