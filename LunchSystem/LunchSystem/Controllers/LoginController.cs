@@ -11,11 +11,11 @@ namespace LunchSystem.Controllers
 {
     public class LoginController : Controller
     {
-        public ILunchRepository _lunchRepository;
+        public ILunchRepository LunchRepository;
 
         public LoginController()
         {
-            _lunchRepository = new LunchRepository();
+            LunchRepository = new LunchRepository();
         }
 
         // GET: Login
@@ -31,11 +31,8 @@ namespace LunchSystem.Controllers
             try
             {
                 model.Valid();
-                if (!_lunchRepository.AccountIsValid(model.LoginUsername))
-                {
-                    model.Message = "You need to register an account.";
-                }
-                
+                LunchRepository.AccountIsValid(model.LoginUsername);
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {

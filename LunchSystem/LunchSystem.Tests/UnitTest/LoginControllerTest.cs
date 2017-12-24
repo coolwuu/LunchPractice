@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using LunchSystem.Controllers;
 using LunchSystem.Interface;
@@ -7,6 +8,7 @@ using NSubstitute;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
 using FluentAssertions;
+using NSubstitute.ExceptionExtensions;
 
 namespace LunchSystem.Tests.UnitTest
 {
@@ -24,8 +26,8 @@ namespace LunchSystem.Tests.UnitTest
                 LoginPassword = "1234"
             };
 
-            controller._lunchRepository = Substitute.For<ILunchRepository>();
-            controller._lunchRepository.AccountIsValid(viewmodel.LoginUsername).Returns(false);
+            controller.LunchRepository = Substitute.For<ILunchRepository>();
+            controller.LunchRepository.When(x => x.AccountIsValid(viewmodel.LoginUsername)).Do( x => throw new Exception("You need to register an account."));
             var result = controller.Login(viewmodel) as ViewResult;
             Assert.AreEqual("You need to register an account.",viewmodel.Message);
             result.Should().NotBeNull();

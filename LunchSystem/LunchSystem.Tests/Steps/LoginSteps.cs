@@ -47,6 +47,13 @@ namespace LunchSystem.Tests.Steps
             Assert.AreEqual(errorMessage,_driver.FindElementById("errorMessage").Text);
         }
 
+        [Then(@"Should redirect to Home Index")]
+        public void ThenShouldRedirectToHomeIndex()
+        {
+            Assert.AreEqual("http://localhost:50621", _driver.Url);
+        }
+
+
         [AfterFeature()]
         public static void Close()
         {

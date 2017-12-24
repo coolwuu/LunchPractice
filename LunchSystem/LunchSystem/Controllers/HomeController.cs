@@ -25,7 +25,6 @@ namespace LunchSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Order(string memberName, string meal, string cost)
         {
-
             LunchRepository.Order(memberName, meal, cost);
             return RedirectToAction("Index");
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -57,7 +58,7 @@ namespace LunchSystem.Repo
             }
         }
 
-        public bool AccountIsValid(string loginUserName)
+        public void AccountIsValid(string loginUserName)
         {
 
             using (var connection = new SqlConnection(ConnStr))
@@ -67,8 +68,13 @@ namespace LunchSystem.Repo
                 {
                     loginUserName
                 },commandType: CommandType.StoredProcedure);
-                return result.Any();
+
+                if (!result.Any())
+                {
+                    throw new Exception("You need to register an account.");
+                }
             }
+            
         }
     }
     
