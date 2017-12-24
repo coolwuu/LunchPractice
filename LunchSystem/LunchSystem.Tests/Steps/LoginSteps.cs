@@ -50,7 +50,7 @@ namespace LunchSystem.Tests.Steps
         [Then(@"Should redirect to Home Index")]
         public void ThenShouldRedirectToHomeIndex()
         {
-            Assert.AreEqual("http://localhost:50621", _driver.Url);
+            Assert.AreEqual("http://localhost:50621/", _driver.Url);
         }
 
 

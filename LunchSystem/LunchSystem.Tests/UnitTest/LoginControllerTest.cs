@@ -33,5 +33,22 @@ namespace LunchSystem.Tests.UnitTest
             result.Should().NotBeNull();
             result.ViewName.Should().Be("Index");
         }
+        [Test]
+        public void LoginSuccessWithRedirectToIndex()
+        {
+            var controller = new LoginController();
+            var viewmodel = new LoginViewModel()
+            {
+                
+                LoginUsername = "Wuu",
+                LoginPassword = "Wuu12345"
+            };
+
+            controller.LunchRepository = Substitute.For<ILunchRepository>();
+            var result = controller.Login(viewmodel) as RedirectToRouteResult;
+            result.Should().NotBeNull();
+            result.RouteValues["controller"].Should().Be("Home");
+            result.RouteValues["action"].Should().Be("Index");
+        }
     }
 }
