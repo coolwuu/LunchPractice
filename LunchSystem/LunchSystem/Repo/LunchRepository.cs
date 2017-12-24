@@ -57,7 +57,7 @@ namespace LunchSystem.Repo
             }
         }
 
-        public bool AccountIsValid(string loginUserName, string loginPassword)
+        public bool AccountIsValid(string loginUserName)
         {
 
             using (var connection = new SqlConnection(ConnStr))

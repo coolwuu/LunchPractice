@@ -4,13 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LunchSystem.Interface;
+using LunchSystem.Models;
 using LunchSystem.Repo;
 
 namespace LunchSystem.Controllers
 {
     public class LoginController : Controller
     {
-        private ILunchRepository _lunchRepository;
+        public ILunchRepository _lunchRepository;
 
         public LoginController()
         {
@@ -23,13 +24,13 @@ namespace LunchSystem.Controllers
             return View();
         }
 
-        public ActionResult Login(string loginUserName, string loginPassword)
+        public ActionResult Login(LoginViewModel model)
         {
-            if (!_lunchRepository.AccountIsValid(loginUserName,loginPassword))
+            if (!_lunchRepository.AccountIsValid(model.LoginUsername))
             {
-               TempData["NeedRegister"] = true;
+                model.Message = "You need to register an account.";
             }
-            return RedirectToAction("Index");
+            return View("Index",model);
         }
     }
 }

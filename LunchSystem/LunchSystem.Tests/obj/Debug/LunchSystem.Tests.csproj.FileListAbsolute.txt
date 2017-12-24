@@ -79,3 +79,11 @@ C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\
 C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\System.Web.Helpers.xml
 C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\Dapper.dll
 C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\Dapper.xml
+C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\FluentAssertions.Core.dll
+C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\FluentAssertions.dll
+C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\FluentAssertions.Mvc5.dll
+C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\FluentAssertions.pdb
+C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\FluentAssertions.xml
+C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\FluentAssertions.Core.pdb
+C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\FluentAssertions.Core.xml
+C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\FluentAssertions.Mvc5.xml

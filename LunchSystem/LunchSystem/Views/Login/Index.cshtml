@@ -1,7 +1,6 @@
 ﻿@using System.Web.Optimization
-@{
-    var needRegister = TempData["NeedRegister"]; 
-}
+@model LunchSystem.Models.LoginViewModel
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,17 +25,17 @@
                 @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { id = "LoginForm" }))
                 {
                     <div class="form-group">
-                        @Html.TextBox("loginUserName", null, new { @class = "form-control", autofocus = "autofocus", placeholder = "UserName" })
+                        @Html.TextBox("LoginUsername", null, new { @class = "form-control", autofocus = "autofocus", placeholder = "UserName" })
                     </div>
                         <div class="form-group">
-                            @Html.TextBox("loginPassword", null, new { @class = "form-control", placeholder = "Password", type = "Password" })
+                            @Html.TextBox("LoginPassword", null, new { @class = "form-control", placeholder = "Password", type = "Password" })
                         </div>
                         <button type="submit" class="btn btn-success btn-block" id="loginButton" style="margin-bottom: 10px;">Login</button>
                 }
-                @if (needRegister != null && (bool)needRegister)
+                @if (Model?.Message != null)
                 {
                     <div class="alert alert-danger" role="alert" id="errorMessage">
-                        You need to register an account.
+                        @Model.Message
                     </div>
                 }
             </div>
