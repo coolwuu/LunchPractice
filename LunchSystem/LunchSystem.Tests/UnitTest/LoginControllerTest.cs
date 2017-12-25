@@ -34,12 +34,11 @@ namespace LunchSystem.Tests.UnitTest
             var viewModel = new LoginViewModel()
             {
 
-                LoginUsername = "Wuu",
+                LoginUsername = "LoginFailAccount",
                 LoginPassword = "1234"
             };
 
             SetILunchRepositoryWithThrewException(viewModel);
-
             var result = Controller.Login(viewModel) as ViewResult;
 
             Assert.AreEqual("You need to register an account.", viewModel.Message);
@@ -84,7 +83,7 @@ namespace LunchSystem.Tests.UnitTest
         private void SetILunchRepositoryWithThrewException(LoginViewModel viewModel)
         {
             Controller.LunchRepository = Substitute.For<ILunchRepository>();
-            Controller.LunchRepository.When(x => x.AccountIsValid(viewModel.LoginUsername))
+            Controller.LunchRepository.When(x => x.Login(viewModel.LoginUsername, viewModel.LoginPassword))
                 .Do(x => throw new Exception("You need to register an account."));
         }
     }

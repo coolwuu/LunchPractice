@@ -16,11 +16,8 @@ namespace LunchSystem.Tests.Steps
         private readonly string _username;
         private readonly string _password;
 
-        private LoginController _controller;
         public MenuSteps()
         {
-            //_controller = new LoginController();
-            //_controller.ControllerContext.HttpContext.Session["auth"] = true;
             _username = "Wuu";
             _password = "Wuu12345";
         }
