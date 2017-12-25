@@ -19,13 +19,13 @@ using NSubstitute.ExceptionExtensions;
 namespace LunchSystem.Tests.UnitTest
 {
     [TestFixture]
-    public class LoginControllerTest
+    public class AccountControllerTest
     {
-        public LoginController Controller;
+        public AccountController Controller;
         [SetUp]
         public void SetUp()
         {
-            Controller = new LoginController();
+            Controller = new AccountController();
         }
 
         [Test]

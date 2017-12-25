@@ -11,10 +11,10 @@ using LunchSystem.Repo;
 
 namespace LunchSystem.Controllers
 {
-    public class LoginController : Controller
+    public class AccountController : Controller
     {
         public ILunchRepository LunchRepository;
-        public LoginController()
+        public AccountController()
         {
             LunchRepository = new LunchRepository();
         }

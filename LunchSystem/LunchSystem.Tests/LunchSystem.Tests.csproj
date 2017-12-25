@@ -132,7 +132,7 @@
     <Compile Include="Steps\LoginSteps.cs" />
     <Compile Include="Steps\MenuSteps.cs" />
     <Compile Include="UnitTest\HomeControllerTests.cs" />
-    <Compile Include="UnitTest\LoginControllerTest.cs" />
+    <Compile Include="UnitTest\AccountControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

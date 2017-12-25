@@ -22,7 +22,7 @@
         <!-- Tab panes -->
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade show active" id="loginPanel">
-                @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { id = "LoginForm" }))
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "LoginForm" }))
                 {
                     @Html.AntiForgeryToken()
                     <div class="form-group">
