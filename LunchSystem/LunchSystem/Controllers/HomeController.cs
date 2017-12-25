@@ -1,10 +1,11 @@
 ﻿using System.Web.Mvc;
+using LunchSystem.Filter;
 using LunchSystem.Interface;
 using LunchSystem.Repo;
 
 namespace LunchSystem.Controllers
 {
-    //[Authorize]
+    [LunchAuthorize]
     public class HomeController : Controller
     {
         public HomeController()

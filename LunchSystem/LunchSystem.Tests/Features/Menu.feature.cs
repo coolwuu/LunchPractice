@@ -76,16 +76,18 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Given("enter Lunch Website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.And("can see the menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("Key in \'Wuu\' in Name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("can see the menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("Key in \'Big Mac\' in Meal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Key in \'Wuu\' in Name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("Key the money \'90\' in Cost", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Key in \'Big Mac\' in Meal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.When("press Ok", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("Key the money \'90\' in Cost", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
+ testRunner.When("press Ok", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
  testRunner.Then("able to see order list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

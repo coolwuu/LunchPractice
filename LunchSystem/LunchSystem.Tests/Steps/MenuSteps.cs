@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Web.Mvc;
+using LunchSystem.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -11,11 +13,33 @@ namespace LunchSystem.Tests.Steps
     {
         private ChromeDriver _driver = new ChromeDriver();
 
+        private readonly string _username;
+        private readonly string _password;
+
+        private LoginController _controller;
+        public MenuSteps()
+        {
+            //_controller = new LoginController();
+            //_controller.ControllerContext.HttpContext.Session["auth"] = true;
+            _username = "Wuu";
+            _password = "Wuu12345";
+        }
+
         [Given(@"enter Lunch Website")]
         public void GivenIHaveEnteredWebsite()
         {
-            _driver.Navigate().GoToUrl("http://localhost:50621/Home/Index");
+            _driver.Navigate().GoToUrl("http://localhost:50621");
         }
+
+        [Given(@"login")]
+        public void GivenLogin()
+        {
+            _driver.FindElementById("LoginUsername").SendKeys(_username);
+            _driver.FindElementById("LoginPassword").SendKeys(_password);
+            _driver.FindElementById("loginButton").Submit();
+            
+        }
+
 
         [Given(@"can see the menu")]
         public void GivenISeeTheMenu()
@@ -41,7 +65,7 @@ namespace LunchSystem.Tests.Steps
         {
             _driver.FindElement(By.Id("Cost")).SendKeys(money.ToString());
         }
-        
+
         [When(@"press Ok")]
         public void WhenIPressOk()
         {

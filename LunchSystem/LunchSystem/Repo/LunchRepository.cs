@@ -16,7 +16,7 @@ namespace LunchSystem.Repo
         private static string ConnStr = ConfigurationManager.AppSettings["LunchDB"];
 
         public IEnumerable<Order> GetOrderedMeals()
-        {             
+        {
             using (var connection = new SqlConnection(ConnStr))
             {
                 var sql = @"SELECT OrderId,MemberName,Meal,Cost,CreatedOn,LastModifiedOn
@@ -35,7 +35,7 @@ namespace LunchSystem.Repo
                 var sql = @"insert into Orders(MemberName,Meal,Cost)
                             Values( @memberName,@meal,@cost)";
                 connection.Open();
-                connection.Execute(sql,new
+                connection.Execute(sql, new
                 {
                     memberName,
                     meal,
@@ -64,18 +64,18 @@ namespace LunchSystem.Repo
             using (var connection = new SqlConnection(ConnStr))
             {
                 connection.Open();
-                var result = connection.Query<OrdersSummaryViewModel>("[dbo].[Lunch_CheckAccountIsValid_17.12]",new
+                var result = connection.Query<OrdersSummaryViewModel>("[dbo].[Lunch_CheckAccountIsValid_17.12]", new
                 {
                     loginUserName
-                },commandType: CommandType.StoredProcedure);
+                }, commandType: CommandType.StoredProcedure);
 
                 if (!result.Any())
                 {
                     throw new Exception("You need to register an account.");
                 }
             }
-            
+
         }
     }
-    
+
 }

@@ -6,6 +6,7 @@
 @Order
 Scenario: Order
 	Given enter Lunch Website
+	And login
 	And can see the menu
 	And Key in 'Wuu' in Name
 	And Key in 'Big Mac' in Meal
