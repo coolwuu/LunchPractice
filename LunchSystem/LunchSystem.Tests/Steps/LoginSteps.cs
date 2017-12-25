@@ -13,7 +13,7 @@ namespace LunchSystem.Tests.Steps
         [Given(@"Entered to Login Page")]
         public void GivenEnteredToLoginPage()
         {
-            _driver.Navigate().GoToUrl("http://localhost:50621/Login/Index");
+            _driver.Navigate().GoToUrl("http://localhost:50621/Account/Index");
         }
 
         [Given(@"see the login form")]
@@ -46,6 +46,14 @@ namespace LunchSystem.Tests.Steps
             var errorMessage = "You need to register an account.";
             Assert.AreEqual(errorMessage,_driver.FindElementById("errorMessage").Text);
         }
+
+        [Then(@"Should show wrong password message")]
+        public void ThenShouldShowWrongPasswordMessage()
+        {
+            var errorMessage = "Password incorrect!";
+            Assert.AreEqual(errorMessage, _driver.FindElementById("errorMessage").Text);
+        }
+
 
         [Then(@"Should redirect to Home Index")]
         public void ThenShouldRedirectToHomeIndex()

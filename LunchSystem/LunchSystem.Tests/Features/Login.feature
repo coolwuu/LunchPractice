@@ -16,4 +16,13 @@ Scenario: Login Failed With Need Register Message
 	And key in Password 'Wuu12345'
 	When press login
 	Then Should redirect to Home Index
+	
+	Scenario: Login fail With Wrong password message
+	Given Entered to Login Page
+	And see the login form
+	And key in login id 'Wuu'
+	And key in Password 'Wuu1234'
+	When press login
+	Then Should show wrong password message
+
 
