@@ -4,6 +4,8 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading;
 using Dapper;
 using LunchSystem.Interface;
@@ -58,13 +60,21 @@ namespace LunchSystem.Repo
             }
         }
 
-        public void AccountIsValid(string loginUserName)
+        public void Login(string userName, string password)
+        {
+            var account = AccountIsValid(userName).First();
+            if(account.Password != CryptoHelper.Encrypt(password))
+                throw new Exception("Password incorrect!");
+
+        }
+
+        private static IEnumerable<Account> AccountIsValid(string loginUserName)
         {
 
             using (var connection = new SqlConnection(ConnStr))
             {
                 connection.Open();
-                var result = connection.Query<OrdersSummaryViewModel>("[dbo].[Lunch_CheckAccountIsValid_17.12]", new
+                var result = connection.Query<Account>("[dbo].[Lunch_CheckAccountIsValid_17.12]", new
                 {
                     loginUserName
                 }, commandType: CommandType.StoredProcedure);
@@ -73,9 +83,20 @@ namespace LunchSystem.Repo
                 {
                     throw new Exception("You need to register an account.");
                 }
-            }
+                return result;
+            };
 
         }
+    }
+
+    internal static class CryptoHelper
+    {
+        private static readonly SHA256 Sha256 = new SHA256CryptoServiceProvider();
+
+        public static string Encrypt(string password)
+        {
+            return Convert.ToBase64String(Sha256.ComputeHash(Encoding.Default.GetBytes(password)));
+        }   
     }
 
 }

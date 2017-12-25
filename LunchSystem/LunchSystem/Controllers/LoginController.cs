@@ -33,10 +33,9 @@ namespace LunchSystem.Controllers
             try
             {
                 model.Valid();
-                LunchRepository.AccountIsValid(model.LoginUsername);
+                LunchRepository.Login(model.LoginUsername,model.LoginPassword);
                 Session["auth"] = true;
                 return RedirectToAction("Index", "Home");
-
             }
             catch (Exception ex)
             {
