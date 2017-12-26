@@ -35,8 +35,6 @@ C:\Users\wuu.tay32\Documents\GitHub\LunchSystem\LunchSystem\LunchSystem.Tests\bi
 C:\Users\wuu.tay32\Documents\GitHub\LunchSystem\LunchSystem\LunchSystem.Tests\bin\Debug\WebDriver.xml
 C:\Users\wuu.tay32\Documents\GitHub\LunchSystem\LunchSystem\LunchSystem.Tests\bin\Debug\System.Web.Optimization.dll
 C:\Users\wuu.tay32\Documents\GitHub\LunchSystem\LunchSystem\LunchSystem.Tests\bin\Debug\System.Web.Optimization.xml
-C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\obj\Debug\LunchSystem.Tests.csproj.CoreCompileInputs.cache
-C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\obj\Debug\LunchSystem.Tests.csprojResolveAssemblyReference.cache
 C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -92,5 +90,7 @@ C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\
 C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\WebDriver.xml
 C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\obj\Debug\LunchSystem.Tests.csprojResolveAssemblyReference.cache
+C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\obj\Debug\LunchSystem.Tests.csproj.CoreCompileInputs.cache
 C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\obj\Debug\LunchSystem.Tests.dll
 C:\Users\wuu.tay32\Documents\GitHub\LunchPractice\LunchSystem\LunchSystem.Tests\obj\Debug\LunchSystem.Tests.pdb

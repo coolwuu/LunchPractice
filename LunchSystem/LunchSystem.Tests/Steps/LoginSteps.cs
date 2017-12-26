@@ -15,7 +15,7 @@ namespace LunchSystem.Tests.Steps
         {
             _driver.Navigate().GoToUrl("http://localhost:50621/Account/Index");
         }
-
+        
         [Given(@"see the login form")]
         public void GivenSeeTheLoginForm()
         {

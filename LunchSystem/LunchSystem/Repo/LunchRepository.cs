@@ -68,6 +68,11 @@ namespace LunchSystem.Repo
 
         }
 
+        public void Register(string viewModelRegisterUsername, string viewModelRegisterPassword)
+        {
+            throw new NotImplementedException();
+        }
+
         private static IEnumerable<Account> AccountIsValid(string loginUserName)
         {
 

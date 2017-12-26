@@ -28,21 +28,38 @@ namespace LunchSystem.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginViewModel model)
+        public ActionResult Login(LoginViewModel viewModel)
         {
             try
             {
-                model.Valid();
-                LunchRepository.Login(model.LoginUsername,model.LoginPassword);
+                viewModel.Valid();
+                LunchRepository.Login(viewModel.LoginUsername, viewModel.LoginPassword);
                 Session["auth"] = true;
                 return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {
-                model.Message = ex.Message;
+                viewModel.Message = ex.Message;
             }
             
-            return View("Index",model);
+            return View("Index", viewModel);
+        }
+
+        public ActionResult Register(RegisterViewModel viewModel)
+        {
+            try
+            {
+                viewModel.Valid();
+                LunchRepository.Register(viewModel.RegisterUsername, viewModel.RegisterPassword);
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception ex)
+            {
+                viewModel.Message = ex.Message;
+            }
+
+            ViewData["Register"] = viewModel;
+            return PartialView("Index");
         }
     }
 }

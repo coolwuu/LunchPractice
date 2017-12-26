@@ -25,4 +25,6 @@ Scenario: Login Failed With Need Register Message
 	When press login
 	Then Should show wrong password message
 
+	
+
 

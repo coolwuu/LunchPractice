@@ -1,4 +1,5 @@
 ﻿@using System.Web.Optimization
+@using LunchSystem.Models
 @model LunchSystem.Models.LoginViewModel
 
 <!DOCTYPE html>
@@ -12,11 +13,11 @@
     <div class="container" style="margin: 150px auto; max-width: 400px; border: 1px solid #ccc; box-shadow: 0px 2px 3px 0px #ddd;">
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" href="#LoginPanel" role="tab" data-toggle="tab">Login</a>
+                <a class="nav-link active" href="#loginPanel" role="tab" data-toggle="tab" id="loginLink">Login</a>
             </li>
-            @*<li class="nav-item">
-                    <a class="nav-link" href="#Register" role="tab" data-toggle="tab">Register</a>
-                </li>*@
+            <li class="nav-item">
+                <a class="nav-link" href="#registerPanel" role="tab" data-toggle="tab" id="registerLink">Register</a>
+            </li>
         </ul>
 
         <!-- Tab panes -->
@@ -29,11 +30,11 @@
                         @Html.TextBoxFor(model => model.LoginUsername, null, new { @class = "form-control", autofocus = "autofocus", placeholder = "UserName" })
                         @Html.ValidationMessageFor(model => model.LoginUsername, "", new { @class = "text-danger" })
                     </div>
-                        <div class="form-group">
-                            @Html.TextBoxFor(model => model.LoginPassword, null, new { @class = "form-control", placeholder = "Password", type = "Password" })
-                            @Html.ValidationMessageFor(model => model.LoginPassword, "", new { @class = "text-danger" })
-                        </div>
-                        <button type="submit" class="btn btn-success btn-block" id="loginButton" style="margin-bottom: 10px;">Login</button>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.LoginPassword, null, new { @class = "form-control", placeholder = "Password", type = "Password" })
+                        @Html.ValidationMessageFor(model => model.LoginPassword, "", new { @class = "text-danger" })
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block" id="loginButton" style="margin-bottom: 10px;">Login</button>
                 }
                 @if (Model?.Message != null)
                 {
@@ -42,10 +43,28 @@
                     </div>
                 }
             </div>
-            @*<div role="tabpanel" class="tab-pane fade" id="Register">Register</div>*@
+            <div role="tabpanel" class="tab-pane fade" id="registerPanel">
+                
+                @Html.Partial("RegisterPartial", new RegisterViewModel())
+
+            </div>
         </div>
     </div>
     @Scripts.Render("~/Content/Scripts/js")
     @Styles.Render("~/Content/CSS/css")
+    <script>
+        $(document).ready(function () {
+            var url = window.location.href;
+            if (url.indexOf("Account/Register") > 0 ) {
+                window.$('#loginPanel').removeClass('active');
+                window.$('#loginPanel').removeClass('show');
+
+                window.$("#registerPanel").addClass('active');
+                window.$("#registerPanel").addClass('show');
+                window.$(".nav-item a").toggleClass("active");
+            }
+
+        });
+    </script>
 </body>
 </html>

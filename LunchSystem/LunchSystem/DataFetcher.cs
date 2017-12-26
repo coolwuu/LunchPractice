@@ -22,7 +22,7 @@ namespace LunchSystem
             conn.Close();
             return result;
         }
-
+        
         public static void Execute(string sql)
         {
             using (SqlConnection conn = new SqlConnection(ConnStr))
