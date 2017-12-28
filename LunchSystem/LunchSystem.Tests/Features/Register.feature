@@ -9,3 +9,10 @@ Scenario: Click on Register tab can see register form
 	When click on register tab
 	Then can see register form
 
+Scenario: Register failed with same username exist message
+	Given Entered to Login Page for Register
+	And click on register tab
+	And can see register form
+	And key in invalid register information
+	When press Register
+	Then should show 'Same username exists! Please use a different username.'
