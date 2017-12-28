@@ -19,9 +19,9 @@
     </div>
     <button type="submit" class="btn btn-success btn-block" id="registerButton" style="margin-bottom: 10px;">Register</button>
 }
-@if (Model?.Message != null)
+@if (ViewBag.RegisterMessage != null)
 {
     <div class="alert alert-danger" role="alert" id="errorMessage">
-        @Model.Message
+        @ViewBag.RegisterMessage
     </div>
 }

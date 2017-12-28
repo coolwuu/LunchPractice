@@ -11,7 +11,7 @@ namespace LunchSystem.Tests.Steps
     [Binding]
     public class MenuSteps
     {
-        private ChromeDriver _driver = new ChromeDriver();
+        private static ChromeDriver _driver = new ChromeDriver();
 
         private readonly string _username;
         private readonly string _password;
@@ -78,7 +78,7 @@ namespace LunchSystem.Tests.Steps
         }
 
         [After("Order")]
-        public void Close()
+        public static void Close()
         {
             _driver.Quit();
         }

@@ -68,9 +68,27 @@ namespace LunchSystem.Repo
 
         }
 
-        public void Register(string viewModelRegisterUsername, string viewModelRegisterPassword)
+        public void Register(string registerUsername, string registerPassword)
         {
-            throw new NotImplementedException();
+            
+            using (var connection = new SqlConnection(ConnStr))
+            {
+                connection.Open();
+                try
+                {
+                    connection.Execute("dbo.[Lunch_Account_Register_17.12]", new
+                    {
+                        registerUsername,
+                        registerPassword = CryptoHelper.Encrypt(registerPassword)
+                    },commandType: CommandType.StoredProcedure);
+
+                }
+                catch(Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                } 
+            }
+                
         }
 
         private static IEnumerable<Account> AccountIsValid(string loginUserName)
@@ -79,7 +97,7 @@ namespace LunchSystem.Repo
             using (var connection = new SqlConnection(ConnStr))
             {
                 connection.Open();
-                var result = connection.Query<Account>("[dbo].[Lunch_CheckAccountIsValid_17.12]", new
+                var result = connection.Query<Account>("[dbo].[Lunch_Account_CheckAccountIsValid_17.12]", new
                 {
                     loginUserName
                 }, commandType: CommandType.StoredProcedure);

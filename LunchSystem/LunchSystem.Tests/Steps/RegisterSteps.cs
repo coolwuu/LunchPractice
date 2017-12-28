@@ -72,7 +72,7 @@ namespace LunchSystem.Tests.Steps
         }
 
 
-        [AfterFeature("RegisterSteps")]
+        [AfterTestRun]
         public static void Close()
         {
             _driver.Quit();

@@ -11,6 +11,6 @@ namespace LunchSystem.Interface
         IEnumerable<OrdersSummaryViewModel> GetOrdersSummary();
 
         void Login(string userName, string password);
-        void Register(string viewModelRegisterUsername, string viewModelRegisterPassword);
+        void Register(string username, string Password);
     }
 }

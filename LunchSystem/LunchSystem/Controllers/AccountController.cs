@@ -51,14 +51,15 @@ namespace LunchSystem.Controllers
             {
                 viewModel.Valid();
                 LunchRepository.Register(viewModel.RegisterUsername, viewModel.RegisterPassword);
+                Session["auth"] = true;
                 return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {
                 viewModel.Message = ex.Message;
+                ViewBag.RegisterMessage = viewModel.Message;
             }
-
-            ViewData["Register"] = viewModel;
+            
             return PartialView("Index");
         }
     }
