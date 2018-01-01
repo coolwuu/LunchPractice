@@ -107,10 +107,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Register success with redirect to home page.")]
-        public virtual void RegisterSuccessWithRedirectToHomePage_()
+        [NUnit.Framework.DescriptionAttribute("Register success with redirect to home page")]
+        public virtual void RegisterSuccessWithRedirectToHomePage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Register success with redirect to home page.", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Register success with redirect to home page", ((string[])(null)));
 #line 20
 this.ScenarioSetup(scenarioInfo);
 #line 21

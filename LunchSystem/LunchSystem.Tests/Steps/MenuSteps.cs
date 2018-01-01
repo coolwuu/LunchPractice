@@ -18,7 +18,7 @@ namespace LunchSystem.Tests.Steps
 
         public MenuSteps()
         {
-            _username = "Wuu";
+            _username = "TestWuu";
             _password = "Wuu12345";
         }
 

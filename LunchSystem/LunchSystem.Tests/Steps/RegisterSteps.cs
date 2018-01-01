@@ -49,7 +49,7 @@ namespace LunchSystem.Tests.Steps
         [Given(@"key in invalid register information")]
         public void GivenKeyInRegisterInformation()
         {
-            var registerName = "Wuu";
+            var registerName = "TestWuu";
             var password = "12345";
 
             Thread.Sleep(1000);
@@ -69,6 +69,26 @@ namespace LunchSystem.Tests.Steps
         public void ThenShouldShow(string errorMessage)
         {
             Assert.AreEqual("Same username exists! Please use a different username.", _driver.FindElementById("errorMessage").Text);
+        }
+
+        [Given(@"key in valid register information")]
+        public void GivenKeyInValidRegisterInformation()
+        {
+            var registerName = "Test";
+            var password = "12345";
+
+            Thread.Sleep(1000);
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
+            IWebElement element = wait.Until<IWebElement>((d) => d.FindElement(By.Id("RegisterUsername")));
+            element.SendKeys(registerName);
+            _driver.FindElementById("RegisterPassword").SendKeys(password);
+            _driver.FindElementById("VerifyPassword").SendKeys(password);
+        }
+
+        [Then(@"should redirect to home page\.")]
+        public void ThenShouldRedirectToHomePage_()
+        {
+            Assert.AreEqual("http://localhost:50621/Home", _driver.Url);
         }
 
 

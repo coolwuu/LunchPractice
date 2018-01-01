@@ -17,7 +17,7 @@ Scenario: Register failed with same username exist message
 	When press Register
 	Then should show 'Same username exists! Please use a different username.'
 
-Scenario: Register success with redirect to home page.
+Scenario: Register success with redirect to home page
 	Given Entered to Login Page for Register
 	And click on register tab
 	And can see register form
