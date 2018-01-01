@@ -17,6 +17,7 @@ namespace LunchSystem.Models
         public string Meal { get; set; }
 
         [Required]
+        [RegularExpression(@"^[0-9]+",ErrorMessage = "Only digits are allowed.")]
         public int Cost { get; set; }
 
         public DateTime CreatedOn { get; set; }
