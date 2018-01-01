@@ -44,13 +44,14 @@
                 }
             </div>
             <div role="tabpanel" class="tab-pane fade" id="registerPanel">
-                
+
                 @Html.Partial("RegisterPartial", new RegisterViewModel())
 
             </div>
         </div>
     </div>
     @Scripts.Render("~/Content/Scripts/js")
+    @Scripts.Render("~/Content/Scripts/jqueryval")
     @Styles.Render("~/Content/CSS/css")
     <script>
         $(document).ready(function () {

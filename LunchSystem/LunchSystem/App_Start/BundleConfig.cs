@@ -18,7 +18,8 @@ namespace LunchSystem.App_Start
                 "~/Content/Scripts/popper.js"
                 ));
 
-
+            bundles.Add(new ScriptBundle("~/Content/Scripts/jqueryval").Include(
+                "~/Content/Scripts/jquery.validate*"));
 
             bundles.Add(new StyleBundle("~/Content/CSS/css").Include(
                 "~/Content/CSS/bootstrap.css",
