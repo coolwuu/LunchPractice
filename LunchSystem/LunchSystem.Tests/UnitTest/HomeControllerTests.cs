@@ -18,7 +18,7 @@ namespace LunchSystem.Tests.UnitTest
             var controller = new HomeController();
 
             controller.LunchRepository = Substitute.For<ILunchRepository>();
-            controller.LunchRepository.GetOrderedMeals().Returns(new List<Order>{new Order{Cost = 90, Meal = "Big Mac", MemberName = "Kiki"}});
+            controller.LunchRepository.GetOrderedMeals().Returns(new List<OrderModels>{new OrderModels{Cost = 90, Meal = "Big Mac", MemberName = "Kiki"}});
 
             var result = controller.Index() as ViewResult;
 

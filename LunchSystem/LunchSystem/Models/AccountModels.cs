@@ -2,7 +2,7 @@
 
 namespace LunchSystem.Models
 {
-    public class Account
+    public class AccountModels
     {
         [Required]
         [StringLength(50)]

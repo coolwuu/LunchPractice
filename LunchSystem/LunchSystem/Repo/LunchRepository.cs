@@ -17,7 +17,7 @@ namespace LunchSystem.Repo
     {
         private static string ConnStr = ConfigurationManager.AppSettings["LunchDB"];
 
-        public IEnumerable<Order> GetOrderedMeals()
+        public IEnumerable<OrderModels> GetOrderedMeals()
         {
             using (var connection = new SqlConnection(ConnStr))
             {
@@ -25,7 +25,7 @@ namespace LunchSystem.Repo
                             FROM Orders WITH(NOLOCK)
                             WHERE DAY(createdon) = Day(GETDATE())";
                 connection.Open();
-                return connection.Query<Order>(sql);
+                return connection.Query<OrderModels>(sql);
             }
 
         }
@@ -91,13 +91,13 @@ namespace LunchSystem.Repo
                 
         }
 
-        private static IEnumerable<Account> AccountIsValid(string loginUserName)
+        private static IEnumerable<AccountModels> AccountIsValid(string loginUserName)
         {
 
             using (var connection = new SqlConnection(ConnStr))
             {
                 connection.Open();
-                var result = connection.Query<Account>("[dbo].[Lunch_Account_CheckAccountIsValid_17.12]", new
+                var result = connection.Query<AccountModels>("[dbo].[Lunch_Account_CheckAccountIsValid_17.12]", new
                 {
                     loginUserName
                 }, commandType: CommandType.StoredProcedure);

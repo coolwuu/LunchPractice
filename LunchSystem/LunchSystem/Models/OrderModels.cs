@@ -6,7 +6,7 @@ using System.Web;
 
 namespace LunchSystem.Models
 {
-    public class Order
+    public class OrderModels
     {
         public int OrderId { get; set; }
 

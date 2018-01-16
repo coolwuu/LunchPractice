@@ -13,13 +13,13 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-
+.vs/
 # Windows shortcuts
 *.lnk
 
 # dbmdl files
 *.dbmdl
-
+*.lock
 # =========================
 # Operating System Files
 # =========================
