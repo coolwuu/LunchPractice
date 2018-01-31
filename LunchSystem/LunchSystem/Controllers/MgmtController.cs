@@ -21,10 +21,5 @@ namespace LunchSystem.Controllers
         {
             return View();
         }
-
-        public ActionResult Upload()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
