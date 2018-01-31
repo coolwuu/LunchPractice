@@ -161,6 +161,7 @@
     <Content Include="Views\MGMT\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\RegisterPartial.cshtml" />
+    <Content Include="Views\MGMT\Restaurant.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

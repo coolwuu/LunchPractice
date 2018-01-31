@@ -133,10 +133,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Register.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Restaurant.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Restaurant.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
     <Compile Include="Steps\MenuSteps.cs" />
     <Compile Include="Steps\RegisterSteps.cs" />
+    <Compile Include="Steps\RestaurantSteps.cs" />
     <Compile Include="UnitTest\HomeControllerTests.cs" />
     <Compile Include="UnitTest\AccountControllerTest.cs" />
   </ItemGroup>
@@ -153,6 +159,10 @@
     <None Include="Features\Register.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Register.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Restaurant.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Restaurant.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

@@ -16,5 +16,15 @@ namespace LunchSystem.Controllers
             var ordersSummaries = LunchRepository.GetOrdersSummary();
             return View(ordersSummaries);
         }
+
+        public ActionResult Restaurant()
+        {
+            return View();
+        }
+
+        public ActionResult Upload()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
