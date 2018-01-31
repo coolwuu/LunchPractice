@@ -7,3 +7,8 @@ C:\Users\wuu.tay32\Documents\GitHub\LunchSystem\LunchSystem\LunchDb\obj\Debug\po
 C:\Users\wuu.tay32\Documents\GitHub\LunchSystem\LunchSystem\LunchDb\obj\Debug\predeploy.sql
 C:\Users\wuu.tay32\Documents\GitHub\LunchSystem\LunchSystem\LunchDb\obj\Debug\LunchDb.dll
 C:\Users\wuu.tay32\Documents\GitHub\LunchSystem\LunchSystem\LunchDb\obj\Debug\LunchDb.pdb
+C:\WorkspaceGit\Wuu\LunchPractice\LunchSystem\LunchDb\bin\Debug\LunchDb.dacpac
+C:\WorkspaceGit\Wuu\LunchPractice\LunchSystem\LunchDb\bin\Debug\LunchDb.dll
+C:\WorkspaceGit\Wuu\LunchPractice\LunchSystem\LunchDb\bin\Debug\LunchDb.pdb
+C:\WorkspaceGit\Wuu\LunchPractice\LunchSystem\LunchDb\obj\Debug\LunchDb.dll
+C:\WorkspaceGit\Wuu\LunchPractice\LunchSystem\LunchDb\obj\Debug\LunchDb.pdb
