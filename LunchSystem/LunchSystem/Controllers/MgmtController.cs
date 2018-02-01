@@ -19,15 +19,13 @@ namespace LunchSystem.Controllers
             return View(ordersSummaries);
         }
 
-        public ActionResult Upload(HttpPostedFileBase image)
+        public ActionResult Upload(HttpPostedFileBase imageFile)
         {
-            string imageName = Path.GetFileName(image.FileName);
+            string imageName = Path.GetFileName(imageFile.FileName);
             var folderPath = Path.Combine(Server.MapPath("~/Content/Image"), imageName);
-            image.SaveAs(folderPath);
+            imageFile.SaveAs(folderPath);
             return RedirectToAction("Index", "Home");
         }
-
-
 
         public ActionResult Restaurant()
         {
